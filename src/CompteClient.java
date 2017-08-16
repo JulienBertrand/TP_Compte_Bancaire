@@ -7,12 +7,25 @@ public class CompteClient {
 	private boolean decouvertAutorise;
 	private double plafondDecouvert;
 	private ArrayList<CompteClient> listeCompte;
+
 	public CompteClient(Client client, double montant, boolean decouvertAutorise, double plafondDecouvert) {
 
 		this.client = client;
 		this.montant = montant;
 		this.decouvertAutorise = decouvertAutorise;
 		this.plafondDecouvert = plafondDecouvert;
+	}
+
+	public int compareTo(CompteClient obj) {
+
+		if (montant == obj.montant) {
+			return 0;
+		} else if (montant > obj.montant) {
+			return -1;
+		} else {
+			return 1;
+		}
+
 	}
 
 	public void ajoutMontant(double credit) {
@@ -34,6 +47,7 @@ public class CompteClient {
 		}
 
 	}
+
 	public String toString() {
 		return client + " - " + this.montant + " - " + this.decouvertAutorise + " - " + this.plafondDecouvert;
 	}

@@ -23,7 +23,9 @@ public class ApplicationCompte {
 			System.out.println("Compte Client > " + nouveauClient);
 			System.out.println("-------------------------------------------------------");
 		}
-		ExtractionServices service = new ExtractionServices();
+		ExtractionServices nouveauService = new ExtractionServices();
+		
+		System.out.println("la moyenne des comptes est " + nouveauService.moyenneSoldesCollectionCompte(nouveauService.listeCompteFiltreMinMax(nouveauService.listeCompteFiltreTriSup(client, 1000), 30, 50) ));
 	}
 
 }
